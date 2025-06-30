@@ -1,0 +1,247 @@
+/* MoodQuiz.css */
+
+.mood-quiz-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.quiz-header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.quiz-header h2 {
+  color: #2d3748;
+  font-size: 28px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.progress-indicator {
+  color: #718096;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.mood-quiz-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.question-block {
+  background-color: #f8fafc;
+  padding: 24px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.question-block h3 {
+  color: #1e293b;
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+/* Emoji Options Styling */
+.emoji-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.emoji-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.emoji-option:hover {
+  border-color: #cbd5e1;
+}
+
+.emoji-option.selected {
+  border-color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+.emoji-option .emoji {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+/* Radio and Checkbox Options Styling */
+.radio-options, .checkbox-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-option, .checkbox-option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background-color: white;
+  border: 2px solid #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.radio-option:hover, .checkbox-option:hover {
+  border-color: #cbd5e1;
+}
+
+.radio-option input[type="radio"], 
+.checkbox-option input[type="checkbox"] {
+  margin-right: 12px;
+  accent-color: #4f46e5;
+}
+
+.radio-option.selected, .checkbox-option.selected {
+  border-color: #4f46e5;
+  background-color: #eef2ff;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.nav-button, .submit-button, .retake-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.nav-button.prev {
+  background-color: #f1f5f9;
+  color: #64748b;
+}
+
+.nav-button.prev:hover {
+  background-color: #e2e8f0;
+}
+
+.nav-button.next, .submit-button {
+  background-color: #4f46e5;
+  color: white;
+}
+
+.nav-button.next:hover, .submit-button:hover {
+  background-color: #4338ca;
+}
+
+.nav-button:disabled, .submit-button:disabled {
+  background-color: #cbd5e1;
+  cursor: not-allowed;
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.progress-dot.active {
+  background-color: #4f46e5;
+  transform: scale(1.2);
+}
+
+.progress-dot.answered {
+  background-color: #a5b4fc;
+}
+
+/* Mood Result Styling */
+.mood-result {
+  padding: 32px;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  animation: fadeIn 0.5s ease;
+}
+
+.mood-result h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.mood-result p {
+  font-size: 16px;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.result-emoji {
+  font-size: 60px;
+  margin-bottom: 16px;
+  animation: bounce 0.8s ease;
+}
+
+.retake-button {
+  background-color: white;
+  color: #1e293b;
+  border: 2px solid white;
+}
+
+.retake-button:hover {
+  background-color: transparent;
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+  .mood-quiz-container {
+    margin: 20px 15px;
+    padding: 20px;
+  }
+  
+  .emoji-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .question-block {
+    padding: 16px;
+  }
+}
